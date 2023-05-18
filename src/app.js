@@ -22,7 +22,8 @@ function showTemperature(response) {
     cityNameElement = document.querySelector('#cityName')
     cityNameElement.innerHTML = response.data.name
     temperatureElement = document.querySelector('#temperature')
-    temperatureElement.innerHTML = Math.round(response.data.main.temp)
+    celsiusTemperature = Math.round(response.data.main.temp)
+    temperatureElement.innerHTML = celsiusTemperature
     descriptionElement = document.querySelector('#description')
     descriptionElement.innerHTML = response.data.weather[0].description
     humidityElement = document.querySelector('#humidity')
@@ -55,5 +56,35 @@ function handleSearch(event) {
 
 search('Kyiv')
 
+let celsiusTemperature = null;
+
 let form = document.querySelector('#search-form')
 form.addEventListener('submit', handleSearch)
+
+
+let fahrenheitLinkElement = document.querySelector('#fahrenheit-link')
+fahrenheitLinkElement.addEventListener('click', showFahrenheit)
+
+function showFahrenheit(event) {
+    event.preventDefault()
+    let temperatureElement = document.querySelector('#temperature')
+    let fahrenheit = (celsiusTemperature * 9 / 5) + 32
+    celsiusLinkElement.classList.remove('active')
+    fahrenheitLinkElement.classList.add('active')
+
+    temperatureElement.innerHTML = Math.round(fahrenheit)
+}
+
+
+let celsiusLinkElement = document.querySelector('#celsius-link')
+celsiusLinkElement.addEventListener('click', showCelsius)
+
+function showCelsius(event) {
+    event.preventDefault()
+    celsiusLinkElement.classList.add('active')
+    fahrenheitLinkElement.classList.remove('active')
+
+    let temperatureElement = document.querySelector('#temperature')
+    temperatureElement.innerHTML = celsiusTemperature
+}
+

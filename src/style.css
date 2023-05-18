@@ -41,12 +41,12 @@ footer {
 }
 
 .weather-temperature img {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
 }
 
 .weather-temperature strong {
-    font-size: 64px;
+    font-size: 50px;
     font-weight: 400;
     line-height: 1;
 }
@@ -63,4 +63,13 @@ footer {
 
 .btn-primary:hover {
     background-color: #6684d5;
+}
+
+.units-link {
+    text-decoration: none;
+    color: #272142;
+}
+
+.weather-temperature .active {
+    color: #6684d5;
 }
