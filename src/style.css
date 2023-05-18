@@ -56,3 +56,11 @@ footer {
     font-size: 16px;
     top: -32px
 }
+
+.btn-primary {
+    background-color: #8c9fd2;
+}
+
+.btn-primary:hover {
+    background-color: #6684d5;
+}

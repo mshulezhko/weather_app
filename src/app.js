@@ -1,8 +1,3 @@
-let apiKey = '8c878230da10ecee80473fe52a3e33b4'
-let cityName = 'Kiev'
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
-console.log(apiUrl)
-
 function formatDate(timestamp) {
     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     let date = new Date(timestamp)
@@ -40,8 +35,25 @@ function showTemperature(response) {
     let urlIcon = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     iconElement.setAttribute('src', urlIcon)
     iconElement.setAttribute('alt', response.data.weather[0].description)
-    console.log(response.data)
-    console.log(formatDate(response.data.dt * 1000))
 }
 
-axios.get(apiUrl).then(showTemperature)
+
+function search(city) {
+    let apiKey = '8c878230da10ecee80473fe52a3e33b4'
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(showTemperature)
+}
+
+function handleSearch(event) {
+    event.preventDefault()
+
+    let cityNameSearchElement = document.querySelector('#cityNameSearch')
+    let cityName = cityNameSearchElement.value
+
+    search(cityName)
+}
+
+search('Kyiv')
+
+let form = document.querySelector('#search-form')
+form.addEventListener('submit', handleSearch)
