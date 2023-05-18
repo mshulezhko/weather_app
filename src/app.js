@@ -36,6 +36,10 @@ function showTemperature(response) {
     windElement.innerHTML = response.data.wind.speed
     dateElement = document.querySelector('#date')
     dateElement.innerHTML = formatDate(response.data.dt * 1000)
+    iconElement = document.querySelector('#icon')
+    let urlIcon = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    iconElement.setAttribute('src', urlIcon)
+    iconElement.setAttribute('alt', response.data.weather[0].description)
     console.log(response.data)
     console.log(formatDate(response.data.dt * 1000))
 }

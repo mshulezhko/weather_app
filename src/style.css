@@ -41,8 +41,8 @@ footer {
 }
 
 .weather-temperature img {
-    height: 65px;
-    width: 65px;
+    height: 100px;
+    width: 100px;
 }
 
 .weather-temperature strong {
