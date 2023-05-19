@@ -76,3 +76,23 @@ footer {
 .weather-temperature .active {
     color: #6684d5;
 }
+
+.weather-forecast {
+    margin-top: 40px;
+}
+
+.weather-forecast-date {
+    color: rgba(39, 33, 66, 0.4);
+    font-size: 14px;
+}
+
+.weather-forecast-temp-max,
+.weather-forecast-temp-min {
+    color: rgba(39, 33, 66, 0.4);
+    font-size: 14px;
+}
+
+.weather-forecast-img img {
+    height: 50px;
+    width: 50px;
+}
