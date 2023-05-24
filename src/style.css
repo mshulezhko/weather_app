@@ -96,3 +96,8 @@ footer {
     height: 50px;
     width: 50px;
 }
+
+#emodji {
+    font-weight: bold;
+    color: green;
+}
